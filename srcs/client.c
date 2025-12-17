@@ -6,21 +6,21 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:34:31 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/16 17:10:10 by tseche           ###   ########.fr       */
+/*   Updated: 2025/12/17 16:41:14 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minitalk.h"
 
-static volatile int g_sync = 0;
+static volatile int	g_sync = 0;
 
-void handler(int _signum)
+void	handler(int _signum)
 {
 	(void)_signum;
 	g_sync = 1;
 }
 
-void send(pid_t pid, char c)
+void	send(pid_t pid, char c)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ void send(pid_t pid, char c)
 	}
 }
 
-int check_pid(char **av)
+int	check_pid(char **av)
 {
 	int	i;
 
@@ -55,11 +55,11 @@ int check_pid(char **av)
 	return (0);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	pid_t	pid;
-	int err;
-	int	i;
+	int		err;
+	int		i;
 
 	if (ac != 3)
 	{
@@ -80,5 +80,5 @@ int main(int ac, char **av)
 	while (av[2][i])
 		send(pid, av[2][i++]);
 	send(pid, '\0');
-	return (0);	
+	return (0);
 }
