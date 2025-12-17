@@ -18,6 +18,7 @@ void handler(int signum, siginfo_t *info, void *context)
 {
 	static unsigned char	c = 0;
 	static int				bit = 0;
+	char					*tmp;
 	
 	(void)context;
 	c <<= 1;
@@ -27,7 +28,9 @@ void handler(int signum, siginfo_t *info, void *context)
 
 	if (bit == 8)
 	{
-		g_mess = ft_strjoin(g_mess, (const char *)&c);
+		tmp = g_mess;
+		g_mess = ft_strjoin(tmp, (const char *)&c);
+		free(tmp);
 		if (!g_mess)
 			g_mess = "";
 		bit = 0;
