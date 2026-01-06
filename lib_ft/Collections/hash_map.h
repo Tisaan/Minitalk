@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 09:40:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/18 13:05:02 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/06 14:55:03 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void			map_clear(t_map *map);
 
 bool			is_null(uint8_t *bytes, size_t size);
 
-void	map_print(t_map *map, void (* print_value)(void *));
+void			map_print(t_map *map, void (*print_value)(void *));
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 12:02:07 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/18 13:13:17 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/06 14:55:45 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	map_print(t_map *map, void (*print_value)(void *))
 	first = true;
 	while (i < map->capacity)
 	{
-		entry = ((uint8_t *)map->entries) + (i++ * entry_size);
+		entry = ((uint8_t *)map->entries) + (i++ *entry_size);
 		if (!is_null(entry, map->key_size))
 		{
 			if (!first)
@@ -81,4 +81,3 @@ void	map_print(t_map *map, void (*print_value)(void *))
 	}
 	write(1, "}\n", 2);
 }
-

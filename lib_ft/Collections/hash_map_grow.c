@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 12:03:26 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/18 12:29:39 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/06 14:55:13 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,3 @@ void	adjust_array(t_map *map)
 	reinsert_entries(map, new_entries, entry_size);
 	update_map(map, new_entries, new_capacity);
 }
-
